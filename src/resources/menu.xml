@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xns:menu xmlns:xns="http://www.w3.org/menu"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.w3.org/menu  menu.xsd">
+    <xns:cold_snack_menu>
+        <!--TODO разобраться с элементом ID-->
+        <xns:dish xns:id="solted_trout_salmon" xns:currency="руб.">
+            <xns:photo>E:\Java\JWD23-task03\src\photo12.jpg</xns:photo>
+            <xns:name>Ассорти рыбное</xns:name>
+            <xns:description_price>
+                <xns:description xns:description="Слабосоленая форель, семга"/>
+            </xns:description_price>
+            <xns:portion>100/20/50</xns:portion>
+        </xns:dish>
+        <!--<xns:dish xns:id="tartlets_with_red_caviar" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo13.jpg</xns:photo>-->
+            <!--<xns:name>Тарталетки с красной икрой</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Тарталетки с красной икрой"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>60/50</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="russian_snack" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo14.jpg</xns:photo>-->
+            <!--<xns:name>Закуска по-русски</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description-->
+                        <!--xns:description="Кусочки атлантической сельди с отварным картофелем, луком, лимоном и зеленью"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>70/50/2/10</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="chicken_roll" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo15.jpg</xns:photo>-->
+            <!--<xns:name>Куриный рулет</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Куриный рулет собственного производства"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>100/5</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="basturma" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo16.jpg</xns:photo>-->
+            <!--<xns:name>Бастурма</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Вяленая вырезка из говяжьего мяса"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>50/5</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="assorted_meat" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo17.jpg</xns:photo>-->
+            <!--<xns:name>Ассорти мясное</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Нарезка из буженины, бастурмы, куриного рулета собственного производства и колбасы"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>100/30</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="boiled_tongue" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo18.jpg</xns:photo>-->
+            <!--<xns:name>Язык отварной</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Нарезка нежного говяжьего языка, подается с хреном"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>80/20/1</xns:portion>-->
+        <!--</xns:dish>-->
+        <xns:dish xns:id="assorted_eggplant" xns:currency="руб.">
+            <xns:photo>E:\Java\JWD23-task03\src\photo19.jpg</xns:photo>
+            <xns:name>Жареные баклажаны с помидорами</xns:name>
+            <xns:description_price>
+                <xns:description xns:description="1. c помидорами"/>
+                <xns:description xns:description="2. c чесноком"/>
+                <xns:description xns:description="3. c орехами"/>
+            </xns:description_price>
+            <xns:portion>100/5</xns:portion>
+        </xns:dish>
+        <!--<xns:dish xns:id="home_pickles" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo20.jpg</xns:photo>-->
+            <!--<xns:name>Соленья по-домашнему</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Маринованные овощи"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>150/10</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="grandmother_treat" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo21.jpg</xns:photo>-->
+            <!--<xns:name>Бабушкины угощения</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Ассорти из маринованных грибов"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>120/20/10</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="cheese_plate" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo22.jpg</xns:photo>-->
+            <!--<xns:name>Сырная тарелка</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Сыр Чечел, дор блю, российский, мраморный"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>100/5</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="white_cheese" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo23.jpg</xns:photo>-->
+            <!--<xns:name>Брынза</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Рассольный сыр, изготавливаемый из овечьего молока"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>75/5</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="green_stuff" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo24.jpg</xns:photo>-->
+            <!--<xns:name>Зелень</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Кинза, лук, петрушка, укроп, базилик"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>30</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="assorted_vegatables" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo25.jpg</xns:photo>-->
+            <!--<xns:name>Ассорти овощное</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Свежие помидоры, болгарский перец, огурцы, редис и зелень"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>150/10</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="vegetble_bouquet" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo26.jpg</xns:photo>-->
+            <!--<xns:name>Овощной букет</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Корейская морковь, капуста, фунчоза"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>150/10</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="armenian_vegetables" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo27.jpg</xns:photo>-->
+            <!--<xns:name>Овощи по армянски</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Мелко нарезанные свежие помидоры, огурцы, болгарский перец, укроп, базилик, кинза, лист салата, зелень"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>150/40</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="senior_tomato" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo28.jpg</xns:photo>-->
+            <!--<xns:name>Сеньор Помидор</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Помидор, фаршированный сырным муссом"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>150/1</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="side_dish_festival" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo29.jpg</xns:photo>-->
+            <!--<xns:name>Фестиваль салатов</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description=""/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>400/10</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="olives" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo30.jpg</xns:photo>-->
+            <!--<xns:name>Оливки, маслины</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description=""/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>50</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="lemon" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo31.jpg</xns:photo>-->
+            <!--<xns:name>Лимон</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description=""/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>60</xns:portion>-->
+        <!--</xns:dish>-->
+        <xns:dish xns:id="matsoni" xns:currency="руб.">
+            <xns:photo>E:\Java\JWD23-task03\src\photo32.jpg</xns:photo>
+            <xns:name>Мацони</xns:name>
+            <xns:description_price>
+                <xns:description xns:description=""/>
+            </xns:description_price>
+            <xns:portion>300</xns:portion>
+        </xns:dish>
+    </xns:cold_snack_menu>
+    <xns:hot_snack_menu>
+        <!--<xns:dish xns:id="lobio_with_champignons" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo1.jpg</xns:photo>-->
+            <!--<xns:name>Лобио с шампиньонами</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Фасоль с шампиньонами и грецкими орехами" xns:price="105"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>150/5</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="julienne" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo2.jpg</xns:photo>-->
+            <!--<xns:name>Жульен</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:price="145" xns:description="1. с курицей"/>-->
+                <!--<xns:description xns:price="155" xns:description="2. c грибами"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>120/1</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="meat_ahtamar" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo3.jpg</xns:photo>-->
+            <!--<xns:name>Ахтамар мясной</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Колбаса, ветчина, буженина, сыр, запеченные в мангале" xns:price="165"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>12 шт.</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="vegetable_ahtamar" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo4.jpg</xns:photo>-->
+            <!--<xns:name>Ахтамар c овощами</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Сыр, помидоры, зелень, запеченные на мангале в лаваше" xns:price="150"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>12 шт.</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="surprise" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo5.jpg</xns:photo>-->
+            <!--<xns:name>Сюрприз</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="" xns:price="260"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>1 шт.</xns:portion>-->
+        <!--</xns:dish>-->
+        <xns:dish xns:id="shrimps" xns:currency="руб.">
+            <xns:photo>E:\Java\JWD23-task03\src\photo6.jpg</xns:photo>
+            <xns:name>Креветки</xns:name>
+            <xns:description_price>
+                <xns:description xns:description="отварные" xns:price="135"/>
+                <xns:description xns:description="жаренные" xns:price="155"/>
+            </xns:description_price>
+            <xns:portion>120/30</xns:portion>
+        </xns:dish>
+        <!--<xns:dish xns:id="turkish_mussels" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo7.jpg</xns:photo>-->
+            <!--<xns:name>Мидии по-турецки</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Мидии, фаршированные сыром и грецким орехом" xns:price="190"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>150/30</xns:portion>-->
+        <!--</xns:dish>-->
+        <!--<xns:dish xns:id="scargo" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo8.jpg</xns:photo>-->
+            <!--<xns:name>Эскарго</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Виноградные улитки, фаршированные по-бургундски" xns:price="230"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>12 шт.</xns:portion>-->
+        <!--</xns:dish>-->
+    </xns:hot_snack_menu>
+    <xns:breakfast_menu>
+        <!--<xns:dish xns:id="fried_eggs" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo9.jpg</xns:photo>-->
+            <!--<xns:name>Глазунья</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="2 яйца(на выбор: ветчина, сыр, помидоры)"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>150</xns:portion>-->
+        <!--</xns:dish>-->
+        <xns:dish xns:id="omelette" xns:currency="руб.">
+            <xns:photo>E:\Java\JWD23-task03\src\photo10.jpg</xns:photo>
+            <xns:name>Омлет</xns:name>
+            <xns:description_price>
+                <xns:description xns:description=""/>
+            </xns:description_price>
+            <xns:portion>100</xns:portion>
+        </xns:dish>
+        <!--<xns:dish xns:id="fried_pancakes_with_meat" xns:currency="руб.">-->
+            <!--<xns:photo>E:\Java\JWD23-task03\src\photo11.jpg</xns:photo>-->
+            <!--<xns:name>Блинчики с мясом</xns:name>-->
+            <!--<xns:description_price>-->
+                <!--<xns:description xns:description="Жаренные блинчики с мясом"/>-->
+            <!--</xns:description_price>-->
+            <!--<xns:portion>150</xns:portion>-->
+        <!--</xns:dish>-->
+    </xns:breakfast_menu>
+
+</xns:menu>
+
+
+

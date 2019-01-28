@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.w3.org/menu"
+        xmlns:tns="http://www.w3.org/menu"
+        elementFormDefault="qualified"
+        attributeFormDefault="qualified">
+
+    <element name="menu" type="tns:Menu"/>
+    <complexType name="Menu">
+        <choice maxOccurs="unbounded">
+            <element name="breakfast_menu" type="tns:BreakfastMenu"/>
+            <element name="hot_snack_menu" type="tns:HotSnackMenu"/>
+            <element name="cold_snack_menu" type="tns:ColdSnackMenu"/>
+        </choice>
+    </complexType>
+    <element name="cold_snack_menu" type="tns:ColdSnackMenu"/>
+    <complexType name="ColdSnackMenu">
+        <!--In all you can use any sequence of elements but only ONCE!
+        There is a solution -> use <choice> with maxOccurs="unbounded"-->
+        <choice maxOccurs="unbounded">
+            <element name="dish" type="tns:Dish" minOccurs="0"/>
+        </choice>
+    </complexType>
+    <element name="hot_snack_menu" type="tns:HotSnackMenu"/>
+    <complexType name="HotSnackMenu">
+        <!--In all you can use any sequence of elements but only ONCE!
+        There is a solution -> use <choice> with maxOccurs="unbounded"-->
+        <choice maxOccurs="unbounded">
+            <element name="dish" type="tns:Dish" minOccurs="0"/>
+        </choice>
+    </complexType>
+    <element name="breakfast_menu" type="tns:BreakfastMenu"/>
+    <complexType name="BreakfastMenu">
+        <!--In all you can use any sequence of elements but only ONCE!
+        There is a solution -> use <choice> with maxOccurs="unbounded"-->
+        <choice maxOccurs="unbounded">
+            <element name="dish" type="tns:Dish" minOccurs="0"/>
+        </choice>
+    </complexType>
+    <!--Dish-->
+    <complexType name="Dish">
+        <sequence>
+            <element name="photo" type="tns:Photo"/>
+            <element name="name" type="tns:Name"/>
+            <element name="description_price" type="tns:Description"/>
+            <element name="portion" type="tns:Portion"/>
+        </sequence>
+        <attribute name="id" type="ID" use="required"/>
+        <attribute name="currency" type ="tns:Currency" use="required"/>
+    </complexType>
+    <!--Photo type-->
+    <simpleType name="Photo">
+        <restriction base="anyURI">
+            <pattern value=".+\.(gif|jpg|png|bmp|psd|jpeg|tiff|pcx)"/>
+        </restriction>
+    </simpleType>
+    <!--Name type-->
+    <simpleType name="Name">
+        <restriction base="token"></restriction>
+    </simpleType>
+
+    <!--Description type-->
+    <complexType name="Description">
+        <sequence>
+            <element name="description" type="tns:DescriptionPrice" maxOccurs="3"/>
+        </sequence>
+    </complexType>
+
+    <!--DescriptionPrice-->
+    <!--Логичнее было бы сделать значение description и price элементами. Т.к. они описываются свойсвта блюда
+    Однако я решил сделать их именно атрибутами, так как:
+     1) таким способом легче связать свойства "decription" и "price"
+     2) не потребуется создавать новый тип данных, хранящий коллекцию объектов, имеющих поля "description" и "price"
+    -->
+    <complexType name="DescriptionPrice">
+        <attribute name="description" type="token" use="required"/>
+        <!--TODO Сделать ограничение по положительное значение-->
+        <attribute name="price" type="positiveInteger"/>
+    </complexType>
+
+    <!--Portion type-->
+    <simpleType name="Portion">
+        <restriction base="string">
+            <pattern value="(\d+ шт\.)|(\d+(/\d+)+)|(\d+)"/>
+            <!--В xml регулярки ограничены:
+             1) Символ ^ и $ не действуют. XML сама их неявно добавляет
+             2) квантификаторы в явном виде не используются
+            подробнее:
+            http://qaru.site/questions/3383112/regular-expression-in-xml-schema-definition-fails-->
+        </restriction>
+    </simpleType>
+    <!--Price type-->
+    <!--Currency-->
+    <simpleType name="Currency">
+        <restriction base="string">
+            <enumeration value="рос. руб."/>
+            <enumeration value="дол. США"/>
+            <enumeration value="eвро"/>
+            <enumeration value="руб."/>
+        </restriction>
+    </simpleType>
+</schema>
