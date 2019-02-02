@@ -1,5 +1,6 @@
 package by.vladyka.epam.dao;
 
+import by.vladyka.epam.dao.exception.DAOException;
 import by.vladyka.epam.dao.impl.MenuDOMParser;
 import by.vladyka.epam.dao.impl.MenuSAXParser;
 import by.vladyka.epam.dao.impl.MenuStAXParser;
@@ -13,7 +14,7 @@ public class XMLDaoFactory {
 
     private XMLDaoFactory() {}
 
-    public DAOMenuParser getDAOParser(String parser) {
+    public DAOMenuParser getDAOParser(String parser) throws DAOException{
         ParserType parserType = ParserType.valueOf(parser);
         switch (parserType) {
             case StAX: {
@@ -26,7 +27,7 @@ public class XMLDaoFactory {
                 return new MenuDOMParser();
             }
             default:
-                return null;
+                throw new DAOException("Unsupported parser type");
         }
     }
 

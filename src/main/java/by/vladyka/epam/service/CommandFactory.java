@@ -1,6 +1,6 @@
-package by.vladyka.epam.model;
+package by.vladyka.epam.service;
 
-import by.vladyka.epam.model.impl.ParseCommand;
+import by.vladyka.epam.service.impl.ParseCommand;
 
 public class CommandFactory {
     private static final CommandFactory instance = new CommandFactory();

@@ -1,0 +1,14 @@
+
+ol{
+    padding: 0;
+    padding-left: 20px;
+    margin: 0;
+}
+.disabled{
+    pointer-events: none; /* делаем элемент неактивным для взаимодействия */
+    background-color: darkgray; !important;
+}
+img{
+    width: 100px;!important;
+    height: 100px;!important;
+}

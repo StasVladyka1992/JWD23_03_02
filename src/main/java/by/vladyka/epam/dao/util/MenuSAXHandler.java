@@ -1,10 +1,8 @@
 package by.vladyka.epam.dao.util;
 
-
 import by.vladyka.epam.entity.Currency;
 import by.vladyka.epam.entity.Description;
 import by.vladyka.epam.entity.Dish;
-import by.vladyka.epam.entity.MenuTagName;
 import by.vladyka.epam.entity.menu.BreakfastMenu;
 import by.vladyka.epam.entity.menu.ColdSnackMenu;
 import by.vladyka.epam.entity.menu.HotSnackMenu;
@@ -16,10 +14,10 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.ArrayList;
 import java.util.List;
 
-import static by.vladyka.epam.entity.MenuTagName.*;
+import static by.vladyka.epam.dao.util.MenuTagName.*;
 
 
-public class MenuSAXHandler extends DefaultHandler  {
+public class MenuSAXHandler extends DefaultHandler {
 
     private Dish dish;
     private Description description;
@@ -33,16 +31,6 @@ public class MenuSAXHandler extends DefaultHandler  {
 
     public List<Menu> getMenu() {
         return menuList;
-    }
-
-    @Override
-    public void startDocument() {
-        System.out.println("SAX parsing started");
-    }
-
-    @Override
-    public void endDocument() {
-        System.out.println("SAX parsing ended");
     }
 
     @Override
@@ -103,12 +91,14 @@ public class MenuSAXHandler extends DefaultHandler  {
                     description.setDescription(attributeValue);
                     break;
                 }
+                case ADDITIONAL_INFO:{
+                    dish.setAdditionalInfo(attributeValue);
+                    break;
+                }
                 case PRICE: {
                     description.setPrice(Integer.valueOf(attributeValue));
                     break;
                 }
-                default:
-                    break;
             }
         }
     }
@@ -130,7 +120,7 @@ public class MenuSAXHandler extends DefaultHandler  {
                 descriptions.add(description);
                 break;
             }
-            case DESCRIPTION_PRICE:{
+            case DESCRIPTION_PRICE: {
                 dish.setDescription(descriptions);
                 break;
             }

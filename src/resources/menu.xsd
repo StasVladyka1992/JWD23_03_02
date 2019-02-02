@@ -64,7 +64,9 @@
         <sequence>
             <element name="description" type="tns:DescriptionPrice" maxOccurs="3"/>
         </sequence>
+        <attribute name="additionalInfo" type="string"/>
     </complexType>
+
 
     <!--DescriptionPrice-->
     <!--Логичнее было бы сделать значение description и price элементами. Т.к. они описываются свойсвта блюда
@@ -74,7 +76,6 @@
     -->
     <complexType name="DescriptionPrice">
         <attribute name="description" type="token" use="required"/>
-        <!--TODO Сделать ограничение по положительное значение-->
         <attribute name="price" type="positiveInteger"/>
     </complexType>
 

@@ -1,7 +1,7 @@
 package by.vladyka.epam.dao.impl;
 
 
-import static by.vladyka.epam.entity.MenuTagName.getEnumElement;
+import static by.vladyka.epam.dao.util.MenuTagName.getEnumElement;
 import static javax.xml.stream.XMLStreamConstants.*;
 
 
@@ -9,7 +9,7 @@ import by.vladyka.epam.dao.DAOMenuParser;
 import by.vladyka.epam.entity.Currency;
 import by.vladyka.epam.entity.Description;
 import by.vladyka.epam.entity.Dish;
-import by.vladyka.epam.entity.MenuTagName;
+import by.vladyka.epam.dao.util.MenuTagName;
 import by.vladyka.epam.entity.menu.BreakfastMenu;
 import by.vladyka.epam.entity.menu.ColdSnackMenu;
 import by.vladyka.epam.entity.menu.HotSnackMenu;
@@ -29,14 +29,13 @@ public class MenuStAXParser implements DAOMenuParser {
 
 
     @Override
-    public List<Menu> startParsing() throws SAXException, IOException, XMLStreamException {
+    public List<Menu> startParsing() throws IOException, XMLStreamException {
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-        InputStream input = new FileInputStream(getXMLRaltiveAddress());
+        InputStream input = new FileInputStream(getXMLRelativeAddress("menu.xml"));
         XMLStreamReader reader = xmlInputFactory.createXMLStreamReader(input);
         List<Menu> menuList = process(reader);
-    return menuList;}
-
-
+        return menuList;
+    }
 
     private static List<Menu> process(XMLStreamReader reader) throws XMLStreamException {
         Description description = null;
@@ -94,9 +93,19 @@ public class MenuStAXParser implements DAOMenuParser {
                             }
                             break;
                         }
-
                         case DESCRIPTION_PRICE: {
                             descriptions = new ArrayList<>();
+                            String attributeValue = reader.getAttributeValue(0);
+                            if (attributeValue==null){
+                                break;
+                            }
+                            MenuTagName enumElement = getEnumElement(reader.getAttributeLocalName(0));
+                            switch (enumElement) {
+                                case ADDITIONAL_INFO: {
+                                    dish.setAdditionalInfo(attributeValue);
+                                    break;
+                                }
+                            }
                             break;
                         }
                         case DESCRIPTION: {

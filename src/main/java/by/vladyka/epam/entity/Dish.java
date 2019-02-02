@@ -11,14 +11,16 @@ public class Dish implements Serializable {
     private String portion;
     private Currency curency;
     private String id;
+    private String additionalInfo;
 
-    public Dish(String photo, String name, List<Description> description, String portion, Currency curency, String id) {
+    public Dish(String photo, String name, List<Description> description, String portion, Currency curency, String id, String additionalInfo) {
         this.photo = photo;
         this.name = name;
         this.description = description;
         this.portion = portion;
         this.curency = curency;
         this.id = id;
+        this.additionalInfo = additionalInfo;
     }
 
     public Dish() {
@@ -72,6 +74,14 @@ public class Dish implements Serializable {
         this.id = id;
     }
 
+    public String getAdditionalInfo() {
+        return additionalInfo;
+    }
+
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -84,7 +94,8 @@ public class Dish implements Serializable {
         if (!description.equals(dish.description)) return false;
         if (!portion.equals(dish.portion)) return false;
         if (curency != dish.curency) return false;
-        return id.equals(dish.id);
+        if (!id.equals(dish.id)) return false;
+        return additionalInfo.equals(dish.additionalInfo);
     }
 
     @Override
@@ -95,6 +106,7 @@ public class Dish implements Serializable {
         result = 31 * result + portion.hashCode();
         result = 31 * result + curency.hashCode();
         result = 31 * result + id.hashCode();
+        result = 31 * result + additionalInfo.hashCode();
         return result;
     }
 
@@ -103,6 +115,7 @@ public class Dish implements Serializable {
         return "Dish{" +
                 "photo='" + photo + '\'' +
                 ", name='" + name + '\'' +
+                ", additionalInfo='" + additionalInfo + '\'' +
                 ", description=" + Arrays.toString(description.toArray()) +
                 ", portion='" + portion + '\'' +
                 ", curency=" + curency +

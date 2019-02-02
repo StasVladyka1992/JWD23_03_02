@@ -11,8 +11,8 @@ import java.util.List;
 public interface DAOMenuParser {
 
     List<Menu> startParsing() throws SAXException, IOException, XMLStreamException;
-    default String getXMLRaltiveAddress(){
-        URL resource = DAOMenuParser.class.getResource("/menu.xml");
-        String s = resource.getPath();
-    return s;}
+    default String getXMLRelativeAddress(String resourceFileName){
+        URL resource = DAOMenuParser.class.getResource("/" + resourceFileName);
+        return resource.getPath();
+    }
 }

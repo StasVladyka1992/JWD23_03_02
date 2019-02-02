@@ -1,4 +1,4 @@
-package by.vladyka.epam.entity;
+package by.vladyka.epam.dao.util;
 
 public enum MenuTagName {
     HOT_SNACK_MENU, COLD_SNACK_MENU, BREAKFAST_MENU, DISH,
@@ -6,7 +6,7 @@ public enum MenuTagName {
     DESCRIPTION_PRICE, MENU,
     //Attributes
     ID, CURRENCY,
-    DESCRIPTION, PRICE;
+    DESCRIPTION, PRICE, ADDITIONAL_INFO;
 
     public static MenuTagName getEnumElement (String element){
         switch (element){
@@ -49,7 +49,9 @@ public enum MenuTagName {
             case "price":{
                 return PRICE;
             }
-            //TODO сделать свое исключение
+            case "additionalInfo":{
+                return ADDITIONAL_INFO;
+            }
             default: throw new IllegalArgumentException();
         }
 

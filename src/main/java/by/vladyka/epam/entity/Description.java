@@ -4,6 +4,7 @@ public class Description {
     private String description;
     private int price;
 
+
     public Description(String description, int price) {
         this.description = description;
         this.price = price;
@@ -27,6 +28,7 @@ public class Description {
     public void setPrice(int price) {
         this.price = price;
     }
+
 
     @Override
     public boolean equals(Object o) {

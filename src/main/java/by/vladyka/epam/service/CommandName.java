@@ -1,4 +1,4 @@
-package by.vladyka.epam.model;
+package by.vladyka.epam.service;
 
 public enum CommandName {
     PARSE

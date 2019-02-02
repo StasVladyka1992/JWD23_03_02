@@ -3,7 +3,6 @@ package by.vladyka.epam.dao.impl;
 
 import by.vladyka.epam.dao.DAOMenuParser;
 import by.vladyka.epam.dao.util.MenuSAXHandler;
-import by.vladyka.epam.entity.Dish;
 import by.vladyka.epam.entity.menu.Menu;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -19,15 +18,8 @@ public class MenuSAXParser implements DAOMenuParser {
         XMLReader saxParser = XMLReaderFactory.createXMLReader();
         MenuSAXHandler menuSAXHandler = new MenuSAXHandler();
         saxParser.setContentHandler(menuSAXHandler);
-        saxParser.parse(new InputSource(getXMLRaltiveAddress()));
+        saxParser.parse(new InputSource(getXMLRelativeAddress("menu.xml")));
         List<Menu> menuList = menuSAXHandler.getMenu();
-//        for (Menu menu:
-//                menuList) {
-//            List<Dish> list = menu.getDishes();
-//            for (Dish dish:
-//                    list) {
-//                System.out.println(dish.toString());
-//            }
-//        }
+
     return menuList;}
 }

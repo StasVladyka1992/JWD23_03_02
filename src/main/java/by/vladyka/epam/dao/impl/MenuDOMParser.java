@@ -2,7 +2,7 @@ package by.vladyka.epam.dao.impl;
 
 import by.vladyka.epam.dao.DAOMenuParser;
 import by.vladyka.epam.entity.Dish;
-import by.vladyka.epam.entity.MenuTagName;
+import by.vladyka.epam.dao.util.MenuTagName;
 import by.vladyka.epam.entity.menu.BreakfastMenu;
 import by.vladyka.epam.entity.menu.ColdSnackMenu;
 import by.vladyka.epam.entity.menu.HotSnackMenu;
@@ -16,7 +16,6 @@ import by.vladyka.epam.entity.Description;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
-import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,11 +23,11 @@ import java.util.List;
 public class MenuDOMParser implements DAOMenuParser {
     //TODO создать статический метод, который возвращает один элемент из массива
     @Override
-    public List<Menu> startParsing() throws SAXException, IOException, XMLStreamException {
+    public List<Menu> startParsing() throws SAXException, IOException {
         List<Menu> menuList = new ArrayList<>();
 
         DOMParser parser = new DOMParser();
-        parser.parse(getXMLRaltiveAddress());
+        parser.parse(getXMLRelativeAddress("menu.xml"));
         Document document = parser.getDocument();
 
         //getting root element XML(menu)
@@ -93,12 +92,15 @@ public class MenuDOMParser implements DAOMenuParser {
             dish.setPortion(portion.getTextContent());
 
             //extracting description
+            Element descriptionPrice = (Element) dishElement.getElementsByTagName("xns:description_price").item(0);
+            dish.setAdditionalInfo(descriptionPrice.getAttribute("xns:additionalInfo"));
+
+
             NodeList descriptionsFromDescriptionPrice = dishElement.getElementsByTagName("xns:description");
             List<Description> descriptions = new ArrayList<>();
             for (int j = 0; j < descriptionsFromDescriptionPrice.getLength(); j++) {
                 Element element = (Element) descriptionsFromDescriptionPrice.item(j);
                 Description description = new Description();
-
                 description.setDescription(element.getAttribute("xns:description"));
 
                 if (element.hasAttribute("xns:price")) {
