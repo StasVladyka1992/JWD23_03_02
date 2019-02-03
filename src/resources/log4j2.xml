@@ -3,7 +3,7 @@
     <Appenders>
 
         <File name="CycleFile" fileName="E:\Java\JWD23_03_02\appCycle.log">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %m%n"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %m %throwable%n"/>
         </File>
     </Appenders>
     <Loggers>

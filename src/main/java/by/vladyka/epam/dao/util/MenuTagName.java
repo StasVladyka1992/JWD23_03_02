@@ -52,7 +52,7 @@ public enum MenuTagName {
             case "additionalInfo":{
                 return ADDITIONAL_INFO;
             }
-            default: throw new IllegalArgumentException();
+            default: return null;
         }
 
     }

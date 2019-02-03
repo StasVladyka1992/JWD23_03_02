@@ -26,7 +26,6 @@
     <fmt:setLocale value="${sessionScope.local}"/>
     <fmt:setBundle basename="prop" var="result"/>
 
-
     <fmt:message bundle="${result}" key="coldSnackMenu" var="coldSnackMenuP"/>
     <fmt:message bundle="${result}" key="hotSnackMenu" var="hotSnackMenuP"/>
     <fmt:message bundle="${result}" key="breakfastMenu" var="breakfastMenuP"/>
@@ -45,7 +44,6 @@
     <fmt:message bundle="${result}" key="toMain" var="toMainP"/>
 
 </head>
-
 <body>
 <div class="container-fluid">
     <div class="row">
@@ -54,13 +52,13 @@
     <div class="row">
         <div class="col-sm-2">
             <div class="list-group">
-                <a href="/parser?menuType=ColdSnackMenu&command=PARSE&parser=${sessionScope.get("parser")}"
+                <a href="/parser?menuType=ColdSnackMenu"
                    class="list-group-item list-group-item-action list-group-item-secondary"><c:out
                         value="${coldSnackMenuP}"/></a>
-                <a href="/parser?menuType=HotSnackMenu&command=PARSE&parser=${sessionScope.get("parser")}"
+                <a href="/parser?menuType=HotSnackMenu"
                    class="list-group-item list-group-item-action list-group-item-secondary"><c:out
                         value="${hotSnackMenuP}"/></a>
-                <a href="/parser?menuType=BreakfastMenu&command=PARSE&parser=${sessionScope.get("parser")}"
+                <a href="/parser?menuType=BreakfastMenu"
                    class="list-group-item list-group-item-action list-group-item-secondary"><c:out
                         value="${breakfastMenuP}"/></a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><c:out
@@ -155,7 +153,7 @@
             <!--disabled "Previous" link-->
             <c:if test="${currentPage>1}">
                 <li class="page-item"><a class="page-link"
-                                         href="/parser?currentPage=${currentPage-1}&lastdish=${(currentPage-2)*5}&menutype=${menuType}&command=PARSE&parser=${parser}"><c:out
+                                         href="/parser?currentPage=${currentPage-1}&lastdish=${(currentPage-2)*5}&menutype=${menuType}"><c:out
                         value="${previousP}"/></a>
                 </li>
             </c:if>
@@ -168,18 +166,18 @@
                 <c:choose>
                     <c:when test="${currentPage==i}">
                         <li class="page-item active"><a class="page-link"
-                                                        href="/parser?currentPage=${i}&lastDish=${lastDish-5}&menuType=${menuType}&command=PARSE&parser=${parser}">${i}</a>
+                                                        href="/parser?currentPage=${i}&lastDish=${lastDish-5}&menuType=${menuType}">${i}</a>
                         </li>
                     </c:when>
                     <c:when test="${i!=currentPage}">
                         <c:if test="${i>currentPage}">
                             <li class="page-item"><a class="page-link"
-                                                     href="/parser?currentPage=${i}&lastDish=${(i-1)*5}&menuType=${menuType}&command=PARSE&parser=${parser}">${i}</a>
+                                                     href="/parser?currentPage=${i}&lastDish=${(i-1)*5}&menuType=${menuType}">${i}</a>
                             </li>
                         </c:if>
                         <c:if test="${i<currentPage}">
                             <li class="page-item"><a class="page-link"
-                                                     href="/parser?currentPage=${i}&lastDish=${(i-1)*5}&menuType=${menuType}&command=PARSE&parser=${parser}">${i}</a>
+                                                     href="/parser?currentPage=${i}&lastDish=${(i-1)*5}&menuType=${menuType}">${i}</a>
                             </li>
                         </c:if>
                     </c:when>
@@ -188,7 +186,7 @@
             <!--available "Next" link-->
             <c:if test="${currentPage+1<=pagesNumber}">
                 <li class="page-item"><a class="page-link"
-                                         href="/parser?currentPage=${currentPage+1}&lastDish=${lastDish}&menuType=${menuType}&command=PARSE&parser=${parser}"><c:out
+                                         href="/parser?currentPage=${currentPage+1}&lastDish=${lastDish}&menuType=${menuType}"><c:out
                         value="${nextP}"/></a>
                 </li>
             </c:if>

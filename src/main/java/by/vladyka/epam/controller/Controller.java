@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.*;
@@ -29,54 +30,74 @@ public class Controller extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //extracting parameters from request
         List<Menu> allMenu;
-        String command = "";
         String menuType = "";
         int pagesNumber;
         int lastDish = 0;
         int currentPage = 1;
-        String parser = "";
-        String language;
 
         logger.info("Started extracting parameters from query");
+        //checking if session exists
+        HttpSession session = req.getSession(false);
+
         Enumeration<String> enumerations = req.getParameterNames();
-        while (enumerations.hasMoreElements()) {
-            String parameterName = enumerations.nextElement();
-            QueryParameter enumParameter = getEnumParameter(parameterName);
-            switch (enumParameter) {
-                case PARSER: {
-                    parser = req.getParameter(parameterName);
-                    req.getSession(true).setAttribute("parser", parser);
-                    break;
+        if (session==null){
+            session = req.getSession(true);
+            while (enumerations.hasMoreElements()) {
+                String parameterName = enumerations.nextElement();
+                QueryParameter enumParameter = getEnumParameter(parameterName);
+                switch (enumParameter) {
+                    case PARSER: {
+                        String parser = req.getParameter(parameterName);
+                        session.setAttribute("parser", parser);
+                        break;
+                    }
+                    case COMMAND: {
+                        String command = req.getParameter(parameterName);
+                        session.setAttribute("command", command);
+                        break;
+                    }
+                    case MENU_TYPE: {
+                        menuType = req.getParameter(parameterName);
+                        break;
+                    }
+                    case LAST_DISH: {
+                        lastDish = Integer.parseInt(req.getParameter(parameterName));
+                        break;
+                    }
+                    case LANGUAGE: {
+                        String language = req.getParameter(parameterName);
+                        session.setAttribute("local", language);
+                    }
                 }
-                case COMMAND: {
-                    command = req.getParameter(parameterName);
-                    break;
-                }
-                case MENU_TYPE: {
-                    menuType = req.getParameter(parameterName);
-                    break;
-                }
-                case LAST_DISH: {
-                    lastDish = Integer.parseInt(req.getParameter(parameterName));
-                    break;
-                }
-                case CURRENT_PAGE: {
-                    currentPage = Integer.parseInt(req.getParameter(parameterName));
-                    break;
-                }
-                case LANGUAGE: {
-                    language = req.getParameter(parameterName);
-                    req.getSession(true).setAttribute("local", language);
+            }
+        }
+        else {
+            while (enumerations.hasMoreElements()) {
+                String parameterName = enumerations.nextElement();
+                QueryParameter enumParameter = getEnumParameter(parameterName);
+                switch (enumParameter) {
+                    case MENU_TYPE: {
+                        menuType = req.getParameter(parameterName);
+                        break;
+                    }
+                    case LAST_DISH: {
+                        lastDish = Integer.parseInt(req.getParameter(parameterName));
+                        break;
+                    }
+                    case CURRENT_PAGE: {
+                        currentPage = Integer.parseInt(req.getParameter(parameterName));
+                        break;
+                    }
                 }
             }
         }
         logger.info("Extracting is done");
+
         //extracting whole menu
         CommandFactory factory = CommandFactory.getInstance();
-        Command commandName = factory.getCommand(command);
+        Command commandName = factory.getCommand((String) session.getAttribute("command"));
         try {
-            allMenu = commandName.execute(parser);
-
+            allMenu = commandName.execute((String)session.getAttribute("parser"));
         } catch (ServiceException ex) {
             logger.error(ex);
             throw new ServletException();
@@ -105,7 +126,7 @@ public class Controller extends HttpServlet {
         //menuType
         req.setAttribute("menuType", menuType);
         //parser
-        req.setAttribute("parser", parser);
+//        req.setAttribute("parser", parser);
         logger.info("Setting parameters to request is done");
         RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/jsp/menu.jsp");
         try{
