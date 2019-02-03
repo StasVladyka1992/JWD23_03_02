@@ -74,3 +74,39 @@
 18:06:34.981 [http-nio-8081-exec-52] INFO  by.vladyka.epam.controller.Controller - Extracting is done 
 18:06:34.984 [http-nio-8081-exec-52] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request started 
 18:06:34.984 [http-nio-8081-exec-52] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request is done 
+18:51:53.005 [http-nio-8081-exec-5] INFO  by.vladyka.epam.controller.Controller - Started extracting parameters from query 
+18:51:53.639 [http-nio-8081-exec-5] INFO  by.vladyka.epam.controller.Controller - Extracting is done 
+18:51:53.858 [http-nio-8081-exec-5] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request started 
+18:51:53.859 [http-nio-8081-exec-5] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request is done 
+18:52:15.297 [http-nio-8081-exec-9] INFO  by.vladyka.epam.controller.Controller - Started extracting parameters from query 
+18:52:15.297 [http-nio-8081-exec-9] INFO  by.vladyka.epam.controller.Controller - Extracting is done 
+18:52:15.323 [http-nio-8081-exec-9] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request started 
+18:52:15.323 [http-nio-8081-exec-9] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request is done 
+18:52:24.455 [http-nio-8081-exec-4] INFO  by.vladyka.epam.controller.Controller - Started extracting parameters from query 
+18:52:24.456 [http-nio-8081-exec-4] INFO  by.vladyka.epam.controller.Controller - Extracting is done 
+18:52:24.459 [http-nio-8081-exec-4] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request started 
+18:52:24.459 [http-nio-8081-exec-4] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request is done 
+18:52:33.428 [http-nio-8081-exec-8] INFO  by.vladyka.epam.controller.Controller - Started extracting parameters from query 
+18:52:33.429 [http-nio-8081-exec-8] INFO  by.vladyka.epam.controller.Controller - Extracting is done 
+18:52:33.431 [http-nio-8081-exec-8] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request started 
+18:52:33.431 [http-nio-8081-exec-8] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request is done 
+18:52:48.921 [http-nio-8081-exec-1] INFO  by.vladyka.epam.controller.Controller - Started extracting parameters from query 
+18:52:48.921 [http-nio-8081-exec-1] INFO  by.vladyka.epam.controller.Controller - Extracting is done 
+18:52:48.930 [http-nio-8081-exec-1] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request started 
+18:52:48.931 [http-nio-8081-exec-1] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request is done 
+18:54:35.183 [http-nio-8081-exec-1] INFO  by.vladyka.epam.controller.Controller - Started extracting parameters from query 
+18:54:35.197 [http-nio-8081-exec-1] INFO  by.vladyka.epam.controller.Controller - Extracting is done 
+18:54:35.215 [http-nio-8081-exec-1] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request started 
+18:54:35.215 [http-nio-8081-exec-1] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request is done 
+18:54:40.463 [http-nio-8081-exec-5] INFO  by.vladyka.epam.controller.Controller - Started extracting parameters from query 
+18:54:40.463 [http-nio-8081-exec-5] INFO  by.vladyka.epam.controller.Controller - Extracting is done 
+18:54:40.466 [http-nio-8081-exec-5] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request started 
+18:54:40.466 [http-nio-8081-exec-5] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request is done 
+18:54:47.151 [http-nio-8081-exec-9] INFO  by.vladyka.epam.controller.Controller - Started extracting parameters from query 
+18:54:47.151 [http-nio-8081-exec-9] INFO  by.vladyka.epam.controller.Controller - Extracting is done 
+18:54:47.156 [http-nio-8081-exec-9] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request started 
+18:54:47.156 [http-nio-8081-exec-9] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request is done 
+18:54:51.924 [http-nio-8081-exec-3] INFO  by.vladyka.epam.controller.Controller - Started extracting parameters from query 
+18:54:51.924 [http-nio-8081-exec-3] INFO  by.vladyka.epam.controller.Controller - Extracting is done 
+18:54:51.926 [http-nio-8081-exec-3] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request started 
+18:54:51.926 [http-nio-8081-exec-3] INFO  by.vladyka.epam.controller.Controller - Setting parameters to request is done 

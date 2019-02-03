@@ -88,6 +88,10 @@ public class Controller extends HttpServlet {
                         currentPage = Integer.parseInt(req.getParameter(parameterName));
                         break;
                     }
+                    case LANGUAGE: {
+                        String language = req.getParameter(parameterName);
+                        session.setAttribute("local", language);
+                    }
                 }
             }
         }
