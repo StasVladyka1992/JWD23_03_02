@@ -42,6 +42,9 @@
     <fmt:message bundle="${result}" key="previous" var="previousP"/>
     <fmt:message bundle="${result}" key="next" var="nextP"/>
     <fmt:message bundle="${result}" key="toMain" var="toMainP"/>
+    <fmt:message bundle="${result}" key="language" var="languageP"/>
+    <fmt:message bundle="${result}" key="changeLanguage" var="changeLanguageP"/>
+
 
 </head>
 <body>
@@ -52,13 +55,13 @@
     <div class="row">
         <div class="col-sm-2">
             <div class="list-group">
-                <a href="/parser?menuType=ColdSnackMenu"
+                <a href="/parser?menuType=ColdSnackMenu&command=SHOW_MENU"
                    class="list-group-item list-group-item-action list-group-item-secondary"><c:out
                         value="${coldSnackMenuP}"/></a>
-                <a href="/parser?menuType=HotSnackMenu"
+                <a href="/parser?menuType=HotSnackMenu&command=SHOW_MENU"
                    class="list-group-item list-group-item-action list-group-item-secondary"><c:out
                         value="${hotSnackMenuP}"/></a>
-                <a href="/parser?menuType=BreakfastMenu"
+                <a href="/parser?menuType=BreakfastMenu&command=SHOW_MENU"
                    class="list-group-item list-group-item-action list-group-item-secondary"><c:out
                         value="${breakfastMenuP}"/></a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><c:out
@@ -80,6 +83,7 @@
                 <th class="align-middle"><c:out value="${portionP}"/></th>
                 <th class="align-middle"><c:out value="${priceP}"/></th>
                 </thead>
+
 
                 <c:forEach var="dish" items="${menu}">
                     <c:set var="lastDish" value="${lastDish+1}"></c:set>
@@ -128,7 +132,7 @@
                             </c:if>
                             <c:if test="${description.size()==1}">
                                 <c:if test="${not empty dish.additionalInfo}">
-                                </br>
+                                    </br>
                                 </c:if>
                                 <c:forEach items="${description}" var="description_price">
                                     <c:choose>
@@ -150,14 +154,14 @@
 
     <c:if test="${pagesNumber!=1}">
         <ul class="pagination justify-content-center">
-            <!--disabled "Previous" link-->
+            <!--available "Previous" link-->
             <c:if test="${currentPage>1}">
                 <li class="page-item"><a class="page-link"
-                                         href="/parser?currentPage=${currentPage-1}&lastdish=${(currentPage-2)*5}&menutype=${menuType}"><c:out
+                                         href="/parser?currentPage=${currentPage-1}&lastDish=${(currentPage-2)*5}&command=SHOW_MENU"><c:out
                         value="${previousP}"/></a>
                 </li>
             </c:if>
-            <!--available "Previous" link-->
+            <!--disabled "Previous" link-->
             <c:if test="${currentPage==1}">
                 <li class="page-item disabled"><a class="page-link " href="#"><c:out value="${previousP}"/></a></li>
             </c:if>
@@ -166,18 +170,18 @@
                 <c:choose>
                     <c:when test="${currentPage==i}">
                         <li class="page-item active"><a class="page-link"
-                                                        href="/parser?currentPage=${i}&lastDish=${lastDish-5}&menuType=${menuType}">${i}</a>
+                                                        href="/parser?currentPage=${i}&lastDish=${lastDish-menu.size()}&command=SHOW_MENU">${i}</a>
                         </li>
                     </c:when>
                     <c:when test="${i!=currentPage}">
                         <c:if test="${i>currentPage}">
                             <li class="page-item"><a class="page-link"
-                                                     href="/parser?currentPage=${i}&lastDish=${(i-1)*5}&menuType=${menuType}">${i}</a>
+                                                     href="/parser?currentPage=${i}&lastDish=${(i-1)*5}&command=SHOW_MENU">${i}</a>
                             </li>
                         </c:if>
                         <c:if test="${i<currentPage}">
                             <li class="page-item"><a class="page-link"
-                                                     href="/parser?currentPage=${i}&lastDish=${(i-1)*5}&menuType=${menuType}">${i}</a>
+                                                     href="/parser?currentPage=${i}&lastDish=${(i-1)*5}&command=SHOW_MENU">${i}</a>
                             </li>
                         </c:if>
                     </c:when>
@@ -186,7 +190,7 @@
             <!--available "Next" link-->
             <c:if test="${currentPage+1<=pagesNumber}">
                 <li class="page-item"><a class="page-link"
-                                         href="/parser?currentPage=${currentPage+1}&lastDish=${lastDish}&menuType=${menuType}"><c:out
+                                         href="/parser?currentPage=${currentPage+1}&lastDish=${lastDish}&command=SHOW_MENU"><c:out
                         value="${nextP}"/></a>
                 </li>
             </c:if>
@@ -197,7 +201,24 @@
         </ul>
     </c:if>
     <div>
-        <a href="../../index.html">&larr;<c:out value="${toMainP}"/></a>
+        <div class="row">
+            <div class="col-sm-2">
+                <a href="../../index.html">&larr;<c:out value="${toMainP}"/></a>
+            </div>
+            <div class="container-fluid col-sm-10 ml-0">
+                <form action="/parser" method="GET">
+                <p class="text-left">Choose language:</p>
+                <select class="custom-select col-sm-2 col-md-1" name="language">
+                    <option value="ru">ru</option>
+                    <option value="en">en</option>
+                </select>
+                    <input type="submit" value="${changeLanguageP}">
+                    <input type="hidden" name="command" value="SHOW_MENU"/>
+                    <input type="hidden" name="lastDish" value="${lastDish-menu.size()}"/>
+                    <input type="hidden" name="currentPage" value="${currentPage}"/>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 </body>

@@ -1,9 +1,11 @@
-package by.vladyka.epam.controller.util;
+package by.vladyka.epam.service.util;
+
+import by.vladyka.epam.service.exception.ServiceException;
 
 public enum QueryParameter {
     PARSER, COMMAND, MENU_TYPE, LAST_DISH, CURRENT_PAGE, LANGUAGE;
 
-    public static QueryParameter getEnumParameter(String parameter){
+    public static QueryParameter getEnumParameter(String parameter) throws ServiceException{
         switch (parameter){
             case ("command"):{
                 return COMMAND;
@@ -24,7 +26,7 @@ public enum QueryParameter {
                 return CURRENT_PAGE;
             }
             default:{
-                return null;
+                throw new ServiceException("Unsupported parameter");
             }
         }
     }

@@ -1,9 +1,9 @@
 package by.vladyka.epam.dao;
 
 import by.vladyka.epam.dao.exception.DAOException;
-import by.vladyka.epam.dao.impl.MenuDOMParser;
-import by.vladyka.epam.dao.impl.MenuSAXParser;
-import by.vladyka.epam.dao.impl.MenuStAXParser;
+import by.vladyka.epam.dao.impl.DAOMenuXmlDOM;
+import by.vladyka.epam.dao.impl.DAOMenuXmlSAX;
+import by.vladyka.epam.dao.impl.DAOMenuXmlStAX;
 
 public class XMLDaoFactory {
     private static final XMLDaoFactory instance = new XMLDaoFactory();
@@ -14,17 +14,17 @@ public class XMLDaoFactory {
 
     private XMLDaoFactory() {}
 
-    public DAOMenuParser getDAOParser(String parser) throws DAOException{
+    public DAOMenuXml getDAOParser(String parser) throws DAOException{
         ParserType parserType = ParserType.valueOf(parser);
         switch (parserType) {
             case StAX: {
-                return new MenuStAXParser();
+                return new DAOMenuXmlStAX();
             }
             case SAX: {
-                return new MenuSAXParser();
+                return new DAOMenuXmlSAX();
             }
             case DOM: {
-                return new MenuDOMParser();
+                return new DAOMenuXmlDOM();
             }
             default:
                 throw new DAOException("Unsupported parser type");

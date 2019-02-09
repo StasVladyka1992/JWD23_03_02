@@ -1,6 +1,7 @@
 package by.vladyka.epam.dao.impl;
 
-import by.vladyka.epam.dao.DAOMenuParser;
+import by.vladyka.epam.dao.DAOMenuXml;
+import by.vladyka.epam.dao.exception.DAOException;
 import by.vladyka.epam.entity.Dish;
 import by.vladyka.epam.dao.util.MenuTagName;
 import by.vladyka.epam.entity.menu.BreakfastMenu;
@@ -20,14 +21,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuDOMParser implements DAOMenuParser {
-    //TODO создать статический метод, который возвращает один элемент из массива
+public class DAOMenuXmlDOM implements DAOMenuXml {
     @Override
-    public List<Menu> startParsing() throws SAXException, IOException {
+    public List<Menu> getMenu() throws DAOException {
         List<Menu> menuList = new ArrayList<>();
 
         DOMParser parser = new DOMParser();
-        parser.parse(getXMLRelativeAddress("menu.xml"));
+        try {
+            parser.parse(getXMLRelativeAddress("menu.xml"));
+        } catch (SAXException|IOException e) {
+            throw new DAOException(e);
+        }
         Document document = parser.getDocument();
 
         //getting root element XML(menu)

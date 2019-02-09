@@ -5,7 +5,8 @@ import static by.vladyka.epam.dao.util.MenuTagName.getEnumElement;
 import static javax.xml.stream.XMLStreamConstants.*;
 
 
-import by.vladyka.epam.dao.DAOMenuParser;
+import by.vladyka.epam.dao.DAOMenuXml;
+import by.vladyka.epam.dao.exception.DAOException;
 import by.vladyka.epam.entity.Currency;
 import by.vladyka.epam.entity.Description;
 import by.vladyka.epam.entity.Dish;
@@ -14,26 +15,30 @@ import by.vladyka.epam.entity.menu.BreakfastMenu;
 import by.vladyka.epam.entity.menu.ColdSnackMenu;
 import by.vladyka.epam.entity.menu.HotSnackMenu;
 import by.vladyka.epam.entity.menu.Menu;
-import org.xml.sax.SAXException;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuStAXParser implements DAOMenuParser {
-
-
+public class DAOMenuXmlStAX implements DAOMenuXml {
     @Override
-    public List<Menu> startParsing() throws IOException, XMLStreamException {
+    public List<Menu> getMenu() throws DAOException {
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-        InputStream input = new FileInputStream(getXMLRelativeAddress("menu.xml"));
-        XMLStreamReader reader = xmlInputFactory.createXMLStreamReader(input);
-        List<Menu> menuList = process(reader);
+        InputStream input;
+        List<Menu> menuList;
+        try {
+            input = new FileInputStream(getXMLRelativeAddress("menu.xml"));
+            XMLStreamReader reader = xmlInputFactory.createXMLStreamReader(input);
+            menuList= process(reader);
+        }
+        catch (FileNotFoundException|XMLStreamException e) {
+            throw new DAOException(e);
+        }
         return menuList;
     }
 
