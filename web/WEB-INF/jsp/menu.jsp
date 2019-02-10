@@ -55,13 +55,13 @@
     <div class="row">
         <div class="col-sm-2">
             <div class="list-group">
-                <a href="/parser?menuType=ColdSnackMenu&command=SHOW_MENU"
+                <a href="/menu?menuType=ColdSnackMenu&command=SHOW_MENU"
                    class="list-group-item list-group-item-action list-group-item-secondary"><c:out
                         value="${coldSnackMenuP}"/></a>
-                <a href="/parser?menuType=HotSnackMenu&command=SHOW_MENU"
+                <a href="/menu?menuType=HotSnackMenu&command=SHOW_MENU"
                    class="list-group-item list-group-item-action list-group-item-secondary"><c:out
                         value="${hotSnackMenuP}"/></a>
-                <a href="/parser?menuType=BreakfastMenu&command=SHOW_MENU"
+                <a href="/menu?menuType=BreakfastMenu&command=SHOW_MENU"
                    class="list-group-item list-group-item-action list-group-item-secondary"><c:out
                         value="${breakfastMenuP}"/></a>
                 <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><c:out
@@ -86,7 +86,6 @@
 
 
                 <c:forEach var="dish" items="${menu}">
-                    <c:set var="lastDish" value="${lastDish+1}"></c:set>
                     <tr>
                         <c:set var="description" value="${dish.description}"></c:set>
                         <td><img src="<c:out value="${dish.photo}"/>"/></td>
@@ -157,7 +156,7 @@
             <!--available "Previous" link-->
             <c:if test="${currentPage>1}">
                 <li class="page-item"><a class="page-link"
-                                         href="/parser?currentPage=${currentPage-1}&lastDish=${(currentPage-2)*5}&command=SHOW_MENU"><c:out
+                                         href="/menu?currentPage=${currentPage-1}&command=SHOW_MENU"><c:out
                         value="${previousP}"/></a>
                 </li>
             </c:if>
@@ -170,18 +169,18 @@
                 <c:choose>
                     <c:when test="${currentPage==i}">
                         <li class="page-item active"><a class="page-link"
-                                                        href="/parser?currentPage=${i}&lastDish=${lastDish-menu.size()}&command=SHOW_MENU">${i}</a>
+                                                        href="/menu?currentPage=${i}&command=SHOW_MENU">${i}</a>
                         </li>
                     </c:when>
                     <c:when test="${i!=currentPage}">
                         <c:if test="${i>currentPage}">
                             <li class="page-item"><a class="page-link"
-                                                     href="/parser?currentPage=${i}&lastDish=${(i-1)*5}&command=SHOW_MENU">${i}</a>
+                                                     href="/menu?currentPage=${i}&command=SHOW_MENU">${i}</a>
                             </li>
                         </c:if>
                         <c:if test="${i<currentPage}">
                             <li class="page-item"><a class="page-link"
-                                                     href="/parser?currentPage=${i}&lastDish=${(i-1)*5}&command=SHOW_MENU">${i}</a>
+                                                     href="/menu?currentPage=${i}&command=SHOW_MENU">${i}</a>
                             </li>
                         </c:if>
                     </c:when>
@@ -190,8 +189,9 @@
             <!--available "Next" link-->
             <c:if test="${currentPage+1<=pagesNumber}">
                 <li class="page-item"><a class="page-link"
-                                         href="/parser?currentPage=${currentPage+1}&lastDish=${lastDish}&command=SHOW_MENU"><c:out
+                                         href="/menu?currentPage=${currentPage+1}&command=SHOW_MENU"><c:out
                         value="${nextP}"/></a>
+
                 </li>
             </c:if>
             <!--disabled "Next" link-->
@@ -206,7 +206,7 @@
                 <a href="../../index.html">&larr;<c:out value="${toMainP}"/></a>
             </div>
             <div class="container-fluid col-sm-10 ml-0">
-                <form action="/parser" method="GET">
+                <form action="/menu" method="GET">
                 <p class="text-left">Choose language:</p>
                 <select class="custom-select col-sm-2 col-md-1" name="language">
                     <option value="ru">ru</option>

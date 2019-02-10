@@ -10,7 +10,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>parser</servlet-name>
-        <url-pattern>/parser</url-pattern>
+        <url-pattern>/menu</url-pattern>
     </servlet-mapping>
 
     <error-page>
