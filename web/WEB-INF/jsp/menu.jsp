@@ -214,7 +214,6 @@
                 </select>
                     <input type="submit" value="${changeLanguageP}">
                     <input type="hidden" name="command" value="SHOW_MENU"/>
-                    <input type="hidden" name="lastDish" value="${lastDish-menu.size()}"/>
                     <input type="hidden" name="currentPage" value="${currentPage}"/>
                 </form>
             </div>
