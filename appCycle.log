@@ -1,0 +1,31 @@
+16:28:35.685 [http-nio-8081-exec-4] ERROR by.vladyka.epam.service.impl.ParseCommand - Parsing xml started 
+16:28:36.211 [http-nio-8081-exec-4] ERROR by.vladyka.epam.service.impl.ParseCommand - Parsing xml is done 
+16:28:36.212 [http-nio-8081-exec-4] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Started extracting and setting request parameters for menu page 
+16:28:40.334 [http-nio-8081-exec-5] ERROR by.vladyka.epam.service.impl.ParseCommand - Parsing xml started 
+16:28:40.355 [http-nio-8081-exec-5] ERROR by.vladyka.epam.service.impl.ParseCommand - Parsing xml is done 
+16:28:40.355 [http-nio-8081-exec-5] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Started extracting and setting request parameters for menu page 
+16:38:02.194 [http-nio-8081-exec-8] ERROR by.vladyka.epam.service.impl.ParseCommand - Parsing xml started 
+16:39:16.792 [http-nio-8081-exec-8] ERROR by.vladyka.epam.service.impl.ParseCommand - Parsing xml is done 
+16:39:36.891 [http-nio-8081-exec-8] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Started extracting and setting request parameters for menu page 
+16:41:10.975 [http-nio-8081-exec-4] ERROR by.vladyka.epam.service.impl.ParseCommand - Parsing xml started 
+16:41:11.012 [http-nio-8081-exec-4] ERROR by.vladyka.epam.service.impl.ParseCommand - Parsing xml is done 
+16:41:11.013 [http-nio-8081-exec-4] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Started extracting and setting request parameters for menu page 
+16:41:11.016 [http-nio-8081-exec-4] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Extracting and setting request parameters for menu page is done 
+16:41:17.994 [http-nio-8081-exec-8] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Started extracting and setting request parameters for menu page 
+16:41:17.994 [http-nio-8081-exec-8] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Extracting and setting request parameters for menu page is done 
+16:41:19.345 [http-nio-8081-exec-10] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Started extracting and setting request parameters for menu page 
+16:41:19.346 [http-nio-8081-exec-10] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Extracting and setting request parameters for menu page is done 
+16:41:20.837 [http-nio-8081-exec-1] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Started extracting and setting request parameters for menu page 
+16:41:20.837 [http-nio-8081-exec-1] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Extracting and setting request parameters for menu page is done 
+16:41:22.059 [http-nio-8081-exec-2] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Started extracting and setting request parameters for menu page 
+16:41:22.060 [http-nio-8081-exec-2] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Extracting and setting request parameters for menu page is done 
+16:41:23.534 [http-nio-8081-exec-3] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Started extracting and setting request parameters for menu page 
+16:41:23.534 [http-nio-8081-exec-3] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Extracting and setting request parameters for menu page is done 
+16:41:28.196 [http-nio-8081-exec-4] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Started extracting and setting request parameters for menu page 
+16:41:28.196 [http-nio-8081-exec-4] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Extracting and setting request parameters for menu page is done 
+16:41:29.761 [http-nio-8081-exec-6] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Started extracting and setting request parameters for menu page 
+16:41:29.761 [http-nio-8081-exec-6] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Extracting and setting request parameters for menu page is done 
+16:41:34.523 [http-nio-8081-exec-7] ERROR by.vladyka.epam.service.impl.ParseCommand - Parsing xml started 
+16:41:34.533 [http-nio-8081-exec-7] ERROR by.vladyka.epam.service.impl.ParseCommand - Parsing xml is done 
+16:41:34.533 [http-nio-8081-exec-7] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Started extracting and setting request parameters for menu page 
+16:41:34.534 [http-nio-8081-exec-7] INFO  by.vladyka.epam.service.impl.ShowMenuCommand - Extracting and setting request parameters for menu page is done 

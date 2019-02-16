@@ -3,6 +3,7 @@ package by.vladyka.epam.service.impl;
 import by.vladyka.epam.dao.exception.DAOException;
 import by.vladyka.epam.dao.DAOMenuXml;
 import by.vladyka.epam.dao.XMLDaoFactory;
+import by.vladyka.epam.entity.Dish;
 import by.vladyka.epam.service.CommandFactory;
 import by.vladyka.epam.service.exception.ServiceException;
 import by.vladyka.epam.entity.menu.Menu;
@@ -31,13 +32,13 @@ public class ParseCommand implements Command {
         } catch (DAOException e) {
             throw new ServiceException(e);
         }
-        List<Menu> allMenu;
+        List<Menu> requestedMenu;
         try {
-            allMenu = daoMenuParser.getMenu();
+            requestedMenu = daoMenuParser.getMenu();
         } catch (DAOException e) {
             throw  new ServiceException(e);
         }
-        session.setAttribute("allMenu", allMenu);
+        session.setAttribute("allMenu", requestedMenu);
         logger.error("Parsing xml is done");
         String pageJSP = CommandFactory.getInstance().getCommand("SHOW_MENU").execute(req);
 

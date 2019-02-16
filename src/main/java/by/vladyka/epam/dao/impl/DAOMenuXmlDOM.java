@@ -44,7 +44,6 @@ public class DAOMenuXmlDOM implements DAOMenuXml {
                menuList.add(menu);
             }
         }
-
     return menuList;}
 
 

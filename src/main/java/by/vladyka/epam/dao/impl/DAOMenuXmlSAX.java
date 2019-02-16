@@ -4,6 +4,7 @@ package by.vladyka.epam.dao.impl;
 import by.vladyka.epam.dao.DAOMenuXml;
 import by.vladyka.epam.dao.exception.DAOException;
 import by.vladyka.epam.dao.util.MenuSAXHandler;
+import by.vladyka.epam.entity.Dish;
 import by.vladyka.epam.entity.menu.Menu;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
